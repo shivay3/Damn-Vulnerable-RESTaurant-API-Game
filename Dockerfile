@@ -7,7 +7,7 @@ COPY pyproject.toml poetry.lock ./
 RUN poetry export -f requirements.txt --output requirements.txt --without-hashes
 
 
-FROM python:3.10-slim-bookworm as runtime
+FROM python:3.13.3-slim-bookworm as runtime
 
 RUN apt-get update
 RUN apt-get -y install libpq-dev gcc vim sudo
